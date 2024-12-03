@@ -1,9 +1,11 @@
-**Una tienda en línea quiere analizar si un nuevo proceso de checkout aumenta el uso de cupones de descuento. Para ello, realizó un test A/B donde los clientes fueron asignados aleatoriamente a dos grupos:
+## Enunciado
+
+**Una tienda en línea quiere analizar si un nuevo proceso de checkout aumenta el uso de cupones de descuento. Para ello, realizó un test A/B donde los clientes fueron asignados aleatoriamente a dos grupos:**
 - Grupo A (checkout tradicional): 500 clientes.
   - 130 de ellos usaron un cupón de descuento
 - Grupo B (nuevo checkout): 500 clientes.
   - 175 de ellos usaron un cupón de descuento
-Tiene el **nuevo proceso de checkout** un impacto significativo en el uso de cupones? Porqué?**
+**Tiene el nuevo proceso de checkout un impacto significativo en el uso de cupones? Porqué?**
 
 ## Respuesta
 
