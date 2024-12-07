@@ -320,7 +320,7 @@ Solución:
 La probabilidad de que un usuario que ha visto el producto específico realice una compra es:
 
 $$
-P(\text{Compra} \mid \text{Visto}) \approx 82.35\%
+P(\text{Compra} \mid \text{Visto}) \approx 0.82 (82%)
 $$
 
 Explicación:
