@@ -838,6 +838,8 @@ Tip: aplicar un z-test de dos muestras (A/B Test)
 --- 
 Solución:
 
+[ab test](exercise-ab_test.ipynb)
+
 ---
 
 ### 2
@@ -853,6 +855,8 @@ Tip: aplicar un z-test para dos muestras pareadas (paired z-test). Obviar cualqu
 
 --- 
 Solución:
+
+[paired test](exercise-paired_test.ipynb)
 
 ---
 
@@ -875,7 +879,7 @@ Solución:
 ---
 Solución:
 
-Detalle en: [chisquared_1](exercise_chisquared_1.ipynb)
+[chi-squared](exercise-chisquared_independence.ipynb)
 
 ---
 
