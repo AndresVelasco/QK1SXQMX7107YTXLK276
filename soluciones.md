@@ -117,7 +117,7 @@ $$
 El nuevo rango intercuartil será:
 
 $$
-IQR_{\text{nuevo}} = Q_3 \text{ nuevo} - Q_1 \text{ nuevo}
+IQR_{\text{nuevo}} = Q_3 \text{ nuevo} - Q_1 \text{ nuevo}, \quad
 IQR_{\text{nuevo}} = (Q_3 \times 1.05) - (Q_1 \times 1.05) = 1.05 \times (Q_3 - Q_1)
 $$
 
@@ -468,17 +468,20 @@ $$
 ---
 Solución:
 
-**La probabilidad aproximada se obtener más de $210$ caras es: $16\%$**
+**La probabilidad aproximada se obtener más de $210$ caras es: $16\\%$**
 
 Explicación:
 
 La probabilidad $p$ de obtener cara en un lanzamiento es $\frac{1}{2} = 0.5$
 
-En media, si repitiesemos los 400 lanzamientos varias veces, se obtendrían $400 \cdot 0.5 = 200$ caras.
+En media, si repitiesemos **el experimento** de los 400 lanzamientos, varias veces, se obtendrían $400 \cdot 0.5 = 200$ caras.
 
-Hay que tener en cuenta la teoría de la distribución binomial según la cual este tipo de experimento (en este caso lanzar una moneda 400 veces), si es repetido muchas veces el número de éxitos
-se distribuye según una curva normal, con desviación estándar:
+Hay que tener en cuenta la aproximación normal de la distribución binomial según la cual este tipo de experimento (en este caso lanzar una moneda 400 veces), si es repetido muchas veces el número de éxitos
+se distribuye según una curva normal, con media y desviación estándar:
 
+$$
+\mu = 400 \cdot 0.5 = 200
+$$
 $$
 \sigma = \sqrt{n \cdot p \cdot (1-p)} = \sqrt{400 \cdot 0.5 \cdot 0.5} = \sqrt{100} = 10
 $$
@@ -513,7 +516,7 @@ prob = 1 - norm.cdf(210, loc=200, scale=10)
 ---
 
 ### 2
-**Un grupo grande de personas se reúne y cada persona lanza una moneda 100 veces. ¿Qué porcentaje aproximado de personas obtendrá entre 40 y 60 cruces?"**
+**Un grupo grande de personas se reúne y cada persona lanza una moneda 100 veces. ¿Qué porcentaje aproximado de personas obtendrá entre 40 y 60 cruces?**
 **(Utiliza la regla empírica)**
 
 Solución:
@@ -562,7 +565,7 @@ La regla empírica establece que:
 - El 95% de los datos están dentro de $2\sigma$ de la media,
 - El 99.7% de los datos están dentro de $3\sigma$ de la media.
 
-Para el **2.5% superior**, corresponde a aproximadamente **2 desviaciones estándar por encima de la media** ($(Z \approx 2\$):
+Para el **2.5% superior**, corresponde a aproximadamente **2 desviaciones estándar por encima de la media** ((Z \approx 2\$):
 
 $$
 1350 + 2 \cdot 120 = 1590
@@ -602,19 +605,18 @@ sigma = 20  # Desviación estándar
 n = 100  # Tamaño de la muestra
 
 # Parámetros de la distribución muestral
-sigma_sample = sigma / (n**0.5)
+sigma_stat = sigma / (n**0.5)
 
 # Media muestral deseada
-x_bar = 52
+x = 52
 
 # Calcular el valor Z
-z = (x_bar - mu) / sigma_sample
+z = (x - mu) / sigma_stat
 
 prob = 1 - norm.cdf(z) 
 print(f"La probabilidad de que la media muestral sea mayor a ${x_bar} es aproximadamente: {prob:.4f}")
 ```
--
---
+---
 
 ### 5
 **En un e-commerce, el tiempo promedio que los clientes pasan navegando en el sitio web es de 8 minutos con una desviación estándar de 2 minutos. Supongamos que seleccionamos una muestra aleatoria de 50 clientes.**
@@ -622,6 +624,12 @@ print(f"La probabilidad de que la media muestral sea mayor a ${x_bar} es aproxim
 
 ---
 Solución:
+
+**La probabilidad es prácticamente 0**
+
+La intención del ejercicio era que se distinguiesen claramente lo que es la media y desviación estándar poblacional (8 y 2 minutos respectivamente) de la media muestral y error estándar (o desviación estándar de la media muestral).
+
+Resolviendo con python, `scipy.stats.norm`:
 
 ```python
 from scipy.stats import norm
@@ -645,6 +653,8 @@ print(f"La probabilidad de que la media muestral sea mayor a {threshold} minutos
 ---
 Solución:
 
+**El intervalo del 95\% es (7.446, 8.554)**
+
 ```python
 from scipy.stats import norm
 
@@ -661,28 +671,190 @@ print(f"El intervalo del 95% es ({lower_bound:.3f}, {upper_bound:.3f})")
 
 ---
 
-### 8
+### 7
 **Un e-commerce quiere estimar el gasto promedio de sus clientes por transacción. A partir de una muestra de 100 transacciones, se calcula:**
 **Gasto promedio: $55**
 **Desviación estándar: $10**
 **Construye un intervalo de confianza del 90% para el gasto promedio por transacción**
 
-### 9
-**A partir del ejercicio 8, qué tamaño de muestra necesitamos para reducir a la mitad la amplitud del intervalo de confianza?**
+---
 
-### 10
-**A partir del ejercicio 8, sin cambiar el tamaño de muestra y si se desea reducir la amplitud del intervalo de confianza en un 20%, cual es el nuevo nivel de confianza**
+Solución:
+
+**El intervalo de confianza del 90% es (53.36, 56.64)**
+
+```python
+from scipy.stats import norm
+
+# Datos
+x_bar = 55  # Media muestral
+s = 10  # Desviación estándar muestral
+n = 100  # Tamaño de la muestra
+confidence = 90
+z = norm.ppf(1 - (1 - (confidence/100)) / 2)
+
+# Margen de error
+margin_error = z * (s / (n**0.5))
+
+# Intervalo de confianza
+lower_bound = x_bar - margin_error
+upper_bound = x_bar + margin_error
+
+print(f"El intervalo de confianza del {confidence}% es ({lower_bound:.2f}, {upper_bound:.2f})")
+```
+
+---
+
+### 8
+**A partir del ejercicio 7, qué tamaño de muestra necesitamos para reducir a la mitad la amplitud del intervalo de confianza?**
+
+---
+
+Solución:
+
+**Necesitamos 4 veces el tamaño de muestra original (100), es decir: 400**
+
+Eso se debe a que el margen de error es inversamente proporcional a la raíz cuadrado de $n$ (tamaño de muestra) por lo que, fijado un $z$ (correspondiente al 95%, para reducirse a la mitad necesita multiplicarse por 4.
+
+$$
+IC = \bar{x} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+Ver solución detallada en python, como continuación del código del ejercicio anterior.
+
+```python
+from scipy.stats import norm
+
+# Datos
+x_bar = 55  # Media muestral
+s = 10  # Desviación estándar muestral
+n = 100  # Tamaño de la muestra
+confidence = 90
+z = norm.ppf(1 - (1 - (confidence/100)) / 2)
+
+# Margen de error
+margin_error = z * (s / (n**0.5))
+
+# Intervalo de confianza
+lower_bound = x_bar - margin_error
+upper_bound = x_bar + margin_error
+
+print(f"El intervalo de confianza del {confidence}% con tamaño de muestra {n} es ({lower_bound:.2f}, {upper_bound:.2f})")
+
+# ¿Qué tamaño de muestra necesitamos para reducir a la mitad la amplitud del intervalo de confianza?
+
+# reducimos el margen de error y despejamos el numero de muestras en la fórmula del margen de error
+margin_error=margin_error/2
+n= ((z*s)/(margin_error))**2
+
+# Intervalo de confianza
+lower_bound = x_bar - margin_error
+upper_bound = x_bar + margin_error
+
+print(f"El intervalo de confianza del {confidence}% con tamaño de muestra {n} es ({lower_bound:.2f}, {upper_bound:.2f})")
+```
+
+---
+
+### 9
+**A partir del ejercicio 9, sin cambiar el tamaño de muestra y si se desea reducir la amplitud del intervalo de confianza en un 20%, cual es el nuevo nivel de confianza**
+
+---
+
+Solución: 
+
+**El nuevo nivel de confianza, reduciendo la amplitud del rango en un 20% con tamaño de muestra 100 es del 81.18%**
+
+A esto se llega disminuyendo el valor de $z$ en 2:
+
+$$
+IC = \bar{x} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+Y calculando la probabilidad de que la media quede entre $-z$ y $z$ como:
+
+$cdf(z) - ( 1 - cdf(z) ) = 2*cdf(z) - 1$
+
+Ver solución detallada en python, como continuación del código del ejercicio anterior.
+
+```python
+from scipy.stats import norm
+
+# Datos
+x_bar = 55  # Media muestral
+s = 10  # Desviación estándar muestral
+n = 100  # Tamaño de la muestra
+confidence = 90
+z = norm.ppf(1 - (1 - (confidence/100)) / 2)
+
+# Margen de error
+margin_error = z * (s / (n**0.5))
+
+# Intervalo de confianza
+lower_bound = x_bar - margin_error
+upper_bound = x_bar + margin_error
+
+print(f"a) El intervalo de confianza del {confidence}% con tamaño de muestra {n} es ({lower_bound:.2f}, {upper_bound:.2f})")
+
+# ¿Qué tamaño de muestra necesitamos para reducir a la mitad la amplitud del intervalo de confianza?
+
+# reducimos el margen de error y despejamos el numero de muestras en la fórmula del margen de error
+margin_error=margin_error/2
+n= ((z*s)/(margin_error))**2
+
+# Intervalo de confianza
+lower_bound = x_bar - margin_error
+upper_bound = x_bar + margin_error
+
+print(f"b) El intervalo de confianza del {confidence}% con tamaño de muestra {n} es ({lower_bound:.2f}, {upper_bound:.2f})")
+
+# Se desea reducir la amplitud del intervalo de confianza en un 20%, cual es el nuevo nivel de confianza?
+
+# ya que no podemos aumentar el tamaño de muestra, reducimos el margen de error disminuyendo z un 20%
+decrease_factor=20
+z=(1-(decrease_factor/100))*z
+
+# una vex obtenido el nuevo z, calculamos la probabilidad asociada
+confidence = 2*norm.cdf(z) - 1
+print(f"c) El nuevo nivel de confianza para reducir el intervalo en un {decrease_factor}% es {confidence*100}%")
+```
+
+---
 
 # Inferencia
 
 ### 1
 
-**Una tienda en línea quiere analizar si un nuevo proceso de checkout aumenta el uso de cupones de descuento. Para ello, realizó un test A/B donde los clientes fueron asignados aleatoriamente a dos grupos:
+**Una tienda en línea quiere analizar si un nuevo proceso de checkout aumenta el uso de cupones de descuento. Para ello, realizó un test A/B donde los clientes fueron asignados aleatoriamente a dos grupos:**
 - Grupo A (checkout tradicional): 500 clientes.
   - 130 de ellos usaron un cupón de descuento
 - Grupo B (nuevo checkout): 500 clientes.
   - 175 de ellos usaron un cupón de descuento
-Tiene el **nuevo proceso de checkout** un impacto significativo en el uso de cupones? Porqué?**
+    
+**¿Tiene el nuevo proceso de checkout un impacto significativo en el uso de cupones? Porqué?**
+
+Tip: aplicar un z-test de dos muestras (A/B Test)
+
+--- 
+Solución:
+
+---
+
+### 2
+
+**Una tienda en línea con clientes recurrentes ha implementado un nuevo diseño en su página de producto. El objetivo es analizar si el nuevo diseño incrementa significativamente el tiempo promedio que los usuarios pasan en la página.**
+**Para ello cuentas con el siguiente CSV que contiene los datos de tiempo en página de cada cliente, antes y después:**
+
+Los datos se encuentran adjuntos:
+
+[CSV](data/paired_test_ecommerce_large.csv)
+
+Tip: aplicar un z-test para dos muestras pareadas (paired z-test). Obviar cualquier consideración relativa al tamaño de la muestra (aplicar z-test en cualquier caso por simplicidad)
+
+--- 
+Solución:
+
+---
 
 # Datos Categóricos
 
@@ -700,3 +872,7 @@ Tiene el **nuevo proceso de checkout** un impacto significativo en el uso de cup
 
 **Existe una relación estadisticamente significativa entre el canal de adquisición y la categoría de producto comprada?**
 
+---
+Solución:
+
+---
