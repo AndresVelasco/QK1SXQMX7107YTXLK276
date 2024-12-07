@@ -287,7 +287,7 @@ Esto es porque el número de sucesos posible es **6x6=36** (todas las combinacio
 Solución: 
 
 $$
-1 - (\frac{5}{6})^3
+1 - (\frac{5}{6})^3 \approx 0.42 (42%)
 $$
 
 Para calcular la probabilidad de lanzar un doble en cualquiera de los siguientes tres turnos, parece más fácil calcular la probabilidad del evento contrario (complementario) que es no sacar ningun doble, para luego restarla a uno.
@@ -317,39 +317,32 @@ $$
 --- 
 Solución:
 
+La probabilidad de que un usuario que ha visto el producto específico realice una compra es:
+
+$$
+P(\text{Compra} \mid \text{Visto}) \approx 82.35\%
+$$
+
+Explicación:
+
 Del enunciado conocemos:
 - $P(\text{Compra}) = 0.7$ (probabilidad de que un usuario realice una compra)
 - $P(\text{No Compra}) = 1 - P(\text{Compra}) = 0.3$ (probabilidad de que un usuario no realice una compra)
 - $P(\text{Visto} \mid \text{Compra}) = 0.4$ (probabilidad de que un usuario que realiza una compra haya visto el producto)
 - $P(\text{Visto} \mid \text{No Compra}) = 0.2$ (probabilidad de que un usuario que no realiza una compra haya visto el producto)
 
-La pregunta: *Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?*
+**IMPORTANTE: la frase "el 40% de los usuarios que realizan una compra han visto un producto específico" puede resultar ambigua. Pero notad que se enfoca en los usuarios que realizan una compra como el grupo base (condicional).  Luego indica que dentro de ese grupo, el 40% corresponde a los que han visto el producto específico. Esto implica la probabilidad condicional $P(\text{Visto} \mid \text{Compra})**
 
-sería: 
-  
-En un e-commerce, se sabe que:  
-- El 70% de los usuarios que visitan el sitio web realizan una compra.  
-- El 40% de los usuarios que realizan una compra han visto un producto específico.  
-- El 20% de los usuarios que no realizan una compra han visto ese mismo producto.  
+La pregunta: *Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?* se corresponde con:
 
-Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?
+$P(\text{Compra} \mid \text{Visto})$
 
-### Respuesta:  
-La probabilidad de que un usuario que ha visitado el producto específico realice una compra es **87.5%**.
-
-### Explicación:
 
 Este es un problema de probabilidad condicional, donde usamos el teorema de Bayes:
 
 $$
 P(\text{Compra} \mid \text{Visto}) = \frac{P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra})}{P(\text{Visto})}
 $$
-
-Donde:
-- \(P(\text{Compra}) = 0.7\) (probabilidad de que un usuario realice una compra),
-- \(P(\text{No Compra}) = 1 - P(\text{Compra}) = 0.3\) (probabilidad de que un usuario no realice una compra),
-- \(P(\text{Visto} \mid \text{Compra}) = 0.4\) (probabilidad de que un usuario que realiza una compra haya visto el producto),
-- \(P(\text{Visto} \mid \text{No Compra}) = 0.2\) (probabilidad de que un usuario que no realiza una compra haya visto el producto).
 
 Primero, calculamos \(P(\text{Visto})\), la probabilidad total de que un usuario haya visto el producto, usando la regla de la probabilidad total:
 
