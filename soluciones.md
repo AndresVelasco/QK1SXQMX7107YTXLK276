@@ -451,4 +451,3 @@ Tiene el **nuevo proceso de checkout** un impacto significativo en el uso de cup
 
 **Existe una relación estadisticamente significativa entre el canal de adquisición y la categoría de producto comprada?**
 
-# Regresión
