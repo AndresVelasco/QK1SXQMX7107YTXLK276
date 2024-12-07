@@ -3,7 +3,7 @@
 ### 1
 **¿Qué require en general de más recursos para su cálculo, la media o la mediana?**
 
------------
+---
 Solución:
 
 - **Media**: Es más sencilla y rápida de calcular. Solo se necesita sumar todos los valores y dividir entre la cantidad de datos. 
@@ -21,7 +21,7 @@ b) El precio medio de los productos aumenta en un 5%
 
 c) El precio medio de los productos se mantiene igual
 
------------
+---
 Solución:
 
 **b) El precio medio de los productos aumenta en un 5%**
@@ -43,7 +43,7 @@ b) la mediana no varía
 
 c) no puede determinarse sin más datos, la mediana requiere de una ordenación exhaustiva de todos los precios
 
------------
+---
 Solución:
 
 **a) La mediana del precio de los productos aumenta en un 5%**
@@ -61,7 +61,7 @@ b) la desviacion estándar aumenta un 5%
 
 c) no puede determinarse con los datos proporcionados, los valores extremos podrían influir severamente en la desviación estándar
 
------------
+---
 Solución:
 
 **b) La desviación estándar aumenta un 5%**
@@ -87,7 +87,7 @@ b) El rango aumenta en un 5%
 
 c) No puede determinarse con los datos proporcionados
 
------------
+---
 Solución:
 
 **(b) El rango aumenta en un 5%.**
@@ -121,7 +121,7 @@ b) El precio medio de los productos disminuye en $5
 
 c) El precio medio de los productos se mantiene igual
 
------------
+---
 Solución:
 
 **(b) El precio medio de los productos disminuye en $5.**
@@ -207,6 +207,25 @@ b) El rango disminuye $5
 
 c) No puede determinarse con los datos proporcionados
 
+---
+Solución:
+
+**(a) El rango no cambia.**
+
+El rango intercuartil (IQR) se define como:
+
+$$
+IQR = Q_3 - Q_1
+$$
+
+Donde:
+- $Q_3$ es el percentil 75 (tercer cuartil).
+- $Q_1$ es el percentil 25 (primer cuartil).
+
+Si a todos los valores del conjunto de datos se les resta una constante $-5$, tanto $Q_1$ como $Q_3$ disminuyen en $5$. Sin embargo, la diferencia entre ellos ($Q_3 - Q_1$) permanece igual, ya que ambas posiciones se desplazan en la misma cantidad.
+
+Por lo tanto, el **rango intercuartil no cambia** cuando se suma o resta una constante a todos los valores del conjunto.
+
 ### 10
 **Supongamos que los precios de un e-commerce tienen una desviación estándar de 10$. Todos los precios disminuyen un 5%. Cuál es la nueva desviación estándar?**
 
@@ -215,6 +234,23 @@ a) No puede calcularse
 b) $10.5
 
 c) $9.5
+
+---
+Solución:
+
+**(c) $9.5**
+
+Es en esencia igual que una pregunta anterior
+
+Dismimuir los precios disminuyen un 5% es multiplicar todos los precios por $0.95$. 
+
+La **varianza** de una variable multiplicada por una constante es igual al cuadrado de la constante multiplicado por la varianza original:
+
+$$
+Var(0.95 \cdot X) = 0.95^{2} \cdot Var(X)
+$$
+
+Como la desviación no es más que la raíz cuadrada de la varianza, la nueva desviación es $0.95$ multiplicdo por la desviación original.
 
 # Probabilidad
 
