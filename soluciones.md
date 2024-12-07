@@ -301,7 +301,7 @@ Solución:
 
 **La probabilidad de obtener un doble es **6/36** que es igual a **1/6** o aproximadamente **16.67%****
 
-Esto es porque el número de sucesos posible es **6x6=36** (todas las combinaciones de 2 dados con 6 caras) y el número de casos favorables **6** (1-1, 2-2, 3-3, 4-4, 5-5, 6-6)
+Esto es porque el número de sucesos posible es **6x6=36** (todas las combinaciones de 2 dados con 6 caras) y el número de casos favorables **6** ($1+1$, $2+2$, $3+3$, $4+4$, $5+5$, $6+6$)
 
 ---
 
@@ -312,7 +312,7 @@ Esto es porque el número de sucesos posible es **6x6=36** (todas las combinacio
 Solución: 
 
 $$
-1 - (\frac{5}{6})^3 \approx 0.42 (42%)
+1 - (\frac{5}{6})^3 \approx 0.42 (42\\%)
 $$
 
 Para calcular la probabilidad de lanzar un doble en cualquiera de los siguientes tres turnos, parece más fácil calcular la probabilidad del evento contrario (complementario) que es no sacar ningun doble, para luego restarla a uno.
@@ -347,7 +347,7 @@ Solución:
 **La probabilidad de que un usuario que ha visto el producto específico realice una compra es**
 
 $$
-P(\text{Compra} \mid \text{Visto}) \approx 0.82 (82\%)
+P(\text{Compra} \mid \text{Visto}) \approx 0.82 (82\\%)
 $$
 
 Explicación:
@@ -358,7 +358,7 @@ Del enunciado conocemos:
 - $P(\text{Visto} \mid \text{Compra}) = 0.4$ (probabilidad de que un usuario que realiza una compra haya visto el producto)
 - $P(\text{Visto} \mid \text{No Compra}) = 0.2$ (probabilidad de que un usuario que no realiza una compra haya visto el producto)
 
-**IMPORTANTE: la frase "el 40% de los usuarios que realizan una compra han visto un producto específico" puede resultar ambigua. Pero notad que se enfoca en los usuarios que realizan una compra como el grupo base (condicional).  Luego indica que dentro de ese grupo, el 40% corresponde a los que han visto el producto específico. Esto implica la probabilidad condicional $P(\text{Visto} \mid \text{Compra})**
+**IMPORTANTE: la frase "el 40% de los usuarios que realizan una compra han visto un producto específico" puede resultar ambigua. Pero notad que se enfoca en los usuarios que realizan una compra como el grupo base (condicional).  Luego indica que dentro de ese grupo, el 40% corresponde a los que han visto el producto específico. Esto implica la probabilidad condicional $P(\text{Visto} \mid \text{Compra})$**
 
 La pregunta: *Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?* debe interpretarse como:
 
@@ -397,7 +397,7 @@ $$
 Por lo tanto, la probabilidad de que un usuario que ha visto el producto específico realice una compra es:
 
 $$
-P(\text{Compra} \mid \text{Visto}) \approx 82.35\%
+P(\text{Compra} \mid \text{Visto}) \approx 82.35\\%
 $$
 
 ---
@@ -411,7 +411,7 @@ Solución:
 **La probabilidad de que un usuario que realiza una compra tenga una cuenta premium es:**
 
 $$
-P(\text{Premium} \mid \text{Compra}) \approx = 0.43 (43.48\%)
+P(\text{Premium} \mid \text{Compra}) \approx = 0.43 (43.48\\%)
 $$
 
 Explicación:
