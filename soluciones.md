@@ -525,7 +525,7 @@ Explicación:
 De manera análoga al ejercicio anterior, la desviación estándar del número de éxitos (cruces en este caso) al repetirse el experimento (cada uno de los 100 lanzamientos) es:
 
 $$
-\sigma = \sqrt{n \cdot p \cdot (1-p)} = \sqrt{100 \cdot 0.5 \cdot 0.5} = \sqrt{100} = 5
+\sigma = \sqrt{n \cdot p \cdot (1-p)} = \sqrt{100 \cdot 0.5 \cdot 0.5} = \sqrt{25} = 5
 $$
 
 Y la media por supuesto 50 (cruces).
@@ -587,9 +587,34 @@ score = norm.ppf(percentile, loc=1350, scale=120)
 ¿Cuál es la probabilidad de que la media sea mayor a $52?**
 
 ---
+Solución:
 
+**La probabilidad de que la media muestral sea mayor a 52 es aproximadamente 16\%**
 
----
+Podemos usar `scipy.stats.norm.cdf` para calcular la probabilidad acumulada complementaria ($P(Z > z)$) donde $z$ es el valor estandarizado correspondiente a $z$:
+
+```python
+from scipy.stats import norm
+
+# Parámetros de la población
+mu = 50  # Media
+sigma = 20  # Desviación estándar
+n = 100  # Tamaño de la muestra
+
+# Parámetros de la distribución muestral
+sigma_sample = sigma / (n**0.5)
+
+# Media muestral deseada
+x_bar = 52
+
+# Calcular el valor Z
+z = (x_bar - mu) / sigma_sample
+
+prob = 1 - norm.cdf(z) 
+print(f"La probabilidad de que la media muestral sea mayor a ${x_bar} es aproximadamente: {prob:.4f}")
+```
+-
+--
 
 ### 5
 **En un e-commerce, el tiempo promedio que los clientes pasan navegando en el sitio web es de 8 minutos con una desviación estándar de 2 minutos. Supongamos que seleccionamos una muestra aleatoria de 50 clientes.**
