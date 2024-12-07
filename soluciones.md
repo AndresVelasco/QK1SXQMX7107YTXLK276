@@ -87,6 +87,31 @@ b) El rango aumenta en un 5%
 
 c) No puede determinarse con los datos proporcionados
 
+-----------
+Solución:
+
+**(b) El rango aumenta en un 5%.**
+
+El rango intercuartil (IQR) se calcula como la diferencia entre el percentil 75 ($Q_3$) y el percentil 25 ($(Q_1$):
+
+$$
+IQR = Q_3 - Q_1
+$$
+
+Si todos los precios aumentan en un 5%, cada valor del conjunto de datos, incluidos $Q_1$ y $Q_3$, se multiplica por $1.05$. Esto implica:
+
+$$
+Q_1 \text{ nuevo} = Q_1 \times 1.05, \quad Q_3 \text{ nuevo} = Q_3 \times 1.05
+$$
+
+El nuevo rango intercuartil será:
+
+$$
+IQR_{\text{nuevo}} = Q_3 \text{ nuevo} - Q_1 \text{ nuevo}
+IQR_{\text{nuevo}} = (Q_3 \times 1.05) - (Q_1 \times 1.05) = 1.05 \times (Q_3 - Q_1)
+$$
+
+
 ### 6
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto al precio medio de los productos?**
 
@@ -95,6 +120,31 @@ a) no puede determinarse sin más datos
 b) El precio medio de los productos disminuye en $5
 
 c) El precio medio de los productos se mantiene igual
+
+-----------
+Solución:
+
+**(b) El precio medio de los productos disminuye en $5.**
+
+El precio medio (promedio) de un conjunto de datos se calcula como:
+
+$$
+\bar{x} = \frac{\sum x_i}{n}
+$$
+
+Si a cada precio $(x_i$ se le resta $5$, el nuevo conjunto de precios será $x_i - 5$. El nuevo promedio será:
+
+$$
+\bar{x_b} = \frac{\sum (x_i - 5)}{n}
+$$
+
+Expandiendo:
+
+$$
+\bar{x_b} = \frac{\sum x_i - 5n}{n} = \frac{\sum x_i}{n} - 5
+$$
+
+Por lo tanto, el precio medio de los productos disminuye en $5$.
 
 ### 7
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto a la mediana del precio?**
