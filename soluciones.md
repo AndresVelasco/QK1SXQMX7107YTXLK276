@@ -558,9 +558,9 @@ Solución: **1590**
 Explicación:
 
 La regla empírica establece que:
-- El 68% de los datos están dentro de \(1\sigma\) de la media,
-- El 95% de los datos están dentro de \(2\sigma\) de la media,
-- El 99.7% de los datos están dentro de \(3\sigma\) de la media.
+- El 68% de los datos están dentro de $1\sigma$ de la media,
+- El 95% de los datos están dentro de $2\sigma$ de la media,
+- El 99.7% de los datos están dentro de $3\sigma$ de la media.
 
 Para el **2.5% superior**, corresponde a aproximadamente **2 desviaciones estándar por encima de la media** ($(Z \approx 2\$):
 
