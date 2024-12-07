@@ -155,6 +155,15 @@ b) no puede determinarse sin más datos, la mediana requiere de una ordenación 
 
 c) La mediana del precio de los productos disminuye en $5
 
+---
+Solución:
+
+**(c) La mediana del precio de los productos disminuye en $5.**
+
+La mediana es el valor que ocupa el lugar central en un conjunto de datos ordenado. Si a todos los valores de un conjunto se les resta $5$, el nuevo conjunto es simplemente el conjunto original desplazado hacia abajo en $5$. 
+
+La posición relativa de los valores no cambia, pero el valor que ocupa la posición central sí disminuye en $5$. Esto implica que la mediana disminuye exactamente en \(5\).
+
 ### 8
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto a la desviación estándar del precio?**
 
@@ -163,6 +172,29 @@ a) la desviación estándar no cambia
 b) la desviacion estándar disminuye en $5
 
 c) no puede determinarse con los datos proporcionados
+
+---
+Solución:
+
+**(a) La desviación estándar no cambia.**
+
+La desviación estándar mide la **dispersión** de los datos respecto a la media. Se calcula como:
+
+$$
+\sigma = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n}}
+$$
+
+Si a todos los valores $x_i$ se les resta una constante ($-5$), la nueva media $\bar{x}$ también disminuye en $5$. Sin embargo, la diferencia $x_i - \bar{x}$ permanece igual para cada dato, ya que tanto el valor como la media han cambiado en la misma cantidad. Esto significa que la dispersión de los datos no se ve afectada.
+
+Por lo tanto, la desviación estándar no cambia al sumar o restar una constante a todos los datos del conjunto.
+
+También podemos contestar recordando la propiedad de la **varianza** (cuadrado de la desviación) según la cual la varianza de la suma de dos variables independientes es igual a la suma de sus varianzas:
+
+$$
+Var(X + Y) = Var (X) + Var (Y)
+$$
+
+En nuestro caso, $Y$ es una constante ($5$) cuya varianza es obviamente $0$.
 
 ### 9
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto a la rango inter-cuartil de los precios?**
