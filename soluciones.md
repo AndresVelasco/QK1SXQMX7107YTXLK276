@@ -13,6 +13,7 @@ Solución:
 - **Mediana**: Requiere ordenar los datos primero. Una vez ordenados, seleccionas el valor central o el promedio de los dos valores centrales.
 
 En el **caso particular** de que los datos estuviesen ya ordenados, la mediana puede calcularse rápidamente.
+---
 
 ### 2
 **Supongamos que todos los precios de los productos en un e-commerce aumentan en un 5%. ¿Cómo afecta esto al precio medio de los productos?**
@@ -35,7 +36,7 @@ $$
 $$
 
 Esto indica que el precio medio aumenta exactamente en un 5%.
-
+---
 ### 3
 **Supongamos que todos los precios de los productos en un e-commerce aumentan en un 5%. ¿Cómo afecta esto a la mediana del precio?**
 
@@ -53,7 +54,7 @@ Solución:
 La mediana es el valor central de un conjunto de datos **ordenados**. Si todos los precios aumentan en un 5%, entonces **cada precio se multiplica por 1.05**, lo que no altera el orden de los datos.
 
 Esto significa que la **mediana también aumenta exactamente en un 5%**, ya que el aumento afecta por igual a todos los valores del conjunto y no depende de cálculos adicionales o reordenamientos.  
-
+---
 ### 4
 **Supongamos que todos los precios de los productos en un e-commerce aumentan en un 5%. ¿Cómo afecta esto a la desviación estándar del precio?**
 
@@ -77,7 +78,7 @@ Recordad también de las propiedades de la Varianza (cuadrado de la desviación)
 $$
 Var(1.05 \cdot X) = 1.05^{2} \cdot Var(X) \rightarrow \sigma = 1.05 \cdot \sigma_X
 $$
-
+---
 ### 5
 **Supongamos que todos los precios de los productos en un e-commerce aumentan en un 5%. ¿Cómo afecta esto a la rango inter-cuartil de los precios?**
 
@@ -113,7 +114,7 @@ IQR_{\text{nuevo}} = Q_3 \text{ nuevo} - Q_1 \text{ nuevo}
 IQR_{\text{nuevo}} = (Q_3 \times 1.05) - (Q_1 \times 1.05) = 1.05 \times (Q_3 - Q_1)
 $$
 
-
+---
 ### 6
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto al precio medio de los productos?**
 
@@ -147,7 +148,7 @@ $$
 $$
 
 Por lo tanto, el precio medio de los productos disminuye en $5$.
-
+---
 ### 7
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto a la mediana del precio?**
 
@@ -165,7 +166,7 @@ Solución:
 La mediana es el valor que ocupa el lugar central en un conjunto de datos ordenado. Si a todos los valores de un conjunto se les resta $5$, el nuevo conjunto es simplemente el conjunto original desplazado hacia abajo en $5$. 
 
 La posición relativa de los valores no cambia, pero el valor que ocupa la posición central sí disminuye en $5$. Esto implica que la mediana disminuye exactamente en \(5\).
-
+---
 ### 8
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto a la desviación estándar del precio?**
 
@@ -197,7 +198,7 @@ Var(X + Y) = Var (X) + Var (Y)
 $$
 
 En nuestro caso, $Y$ es una constante ($5$) cuya varianza es obviamente $0$.
-
+---
 ### 9
 **Supongamos que todos los precios de los productos en un e-commerce disminuyen en $5. ¿Cómo afecta esto a la rango inter-cuartil de los precios?**
 
@@ -227,7 +228,7 @@ Donde:
 Si a todos los valores del conjunto de datos se les resta una constante $-5$, tanto $Q_1$ como $Q_3$ disminuyen en $5$. Sin embargo, la diferencia entre ellos ($Q_3 - Q_1$) permanece igual, ya que ambas posiciones se desplazan en la misma cantidad.
 
 Por lo tanto, el **rango intercuartil no cambia** cuando se suma o resta una constante a todos los valores del conjunto.
-
+---
 ### 10
 **Supongamos que los precios de un e-commerce tienen una desviación estándar de 10$. Todos los precios disminuyen un 5%. Cuál es la nueva desviación estándar?**
 
@@ -253,7 +254,7 @@ Var(0.95 \cdot X) = 0.95^{2} \cdot Var(X)
 $$
 
 Como la desviación no es más que la raíz cuadrada de la varianza, la nueva desviación es $0.95$ multiplicdo por la desviación original.
-
+---
 # Probabilidad
 
 ### 1
@@ -271,7 +272,7 @@ $$
 La probabilidad de obtener una cara es $\frac{1}{2}$. 
 
 Cada lanzamiento es un **evento independiente** por lo que las probabilidades se multiplican.
-
+---
 ### 2
 **Cuando lanzas un par de dados, un doble es cuando ambos dados muestran el mismo número, por ejemplo, ambos muestran '1' o ambos muestran '4'. ¿Cuál es la probabilidad de obtener un doble al lanzar un par de dados?**
 
@@ -281,7 +282,7 @@ Solución:
 **La probabilidad de obtener un doble es **6/36** que es igual a **1/6** o aproximadamente **16.67%****
 
 Esto es porque el número de sucesos posible es **6x6=36** (todas las combinaciones de 2 dados con 6 caras) y el número de casos favorables **6** (1-1, 2-2, 3-3, 4-4, 5-5, 6-6)
-
+---
 ### 3
 **El juego de Monopoly se juega lanzando un par de dados. Si caes en la cárcel, para salir debes lanzar un doble en cualquiera de tus siguientes tres turnos, o pagar una multa. ¿Cuál es la probabilidad de salir de la cárcel sin pagar una multa?**
 
@@ -312,7 +313,7 @@ por lo que:
 $$
 P(\text{no-doble}) = 1 - P(\text{doble}) = 1 - \frac{1}{6} = \frac{5}{6}
 $$
-
+---
 ### 4
 **En un e-commerce, se sabe que el 70% de los usuarios que visitan el sitio web realizan una compra. Además, el 40% de los usuarios que realizan una compra han visto un producto específico, mientras que solo el 20% de los usuarios que no realizan una compra han visto ese mismo producto. Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?**
 
@@ -374,7 +375,7 @@ Por lo tanto, la probabilidad de que un usuario que ha visto el producto especí
 $$
 P(\text{Compra} \mid \text{Visto}) \approx 82.35\%
 $$
-
+---
 ### 5
 **En un e-commerce, se sabe que el 30% de los usuarios que visitan el sitio web tienen una cuenta premium. Además, el 50% de los usuarios con cuenta premium realizan una compra, mientras que solo el 20% de los usuarios sin cuenta premium realizan una compra.Si un usuario realiza una compra, ¿cuál es la probabilidad de que tenga una cuenta premium?**
 
@@ -429,7 +430,7 @@ Sustituyendo los valores:
 $$
 P(\text{Premium} \mid \text{Compra}) = \frac{0.5 \cdot 0.3}{0.29} = \frac{0.15}{0.29} \approx 0.4348
 $$
-
+---
 # Teorema del Limite Central
 
 ### 1
@@ -480,7 +481,7 @@ Alternativamente sin haber calculado previamente el valor estándarizado $z$:
 from scipy.stats import norm
 prob = 1 - norm.cdf(210, loc=200, scale=10) 
 ```
-
+---
 ### 2
 **Un grupo grande de personas se reúne y cada persona lanza una moneda 100 veces. ¿Qué porcentaje aproximado de personas obtendrá entre 40 y 60 cruces?"**
 **(Utiliza la regla empírica)**
@@ -513,7 +514,7 @@ prob = norm.cdf(2) - norm.cdf(-2)
 `norm.cdf(-2)` nos da la probabilida de encontrar un valor por debajo de -2
 
 La resta de ambos es la probabilidad de encontrarlo entre medias.
-
+---
 ### 3
 **Las puntuaciones de un determinado examen siguen una distribución normal con una media de 1350 y una desviación estándar de 120.
 Para calificar para un determinado trabajo, una candidata necesita estar en el 2.5% superior. ¿Qué puntuación aproximada necesita?**
@@ -546,7 +547,7 @@ percentile = 0.975
 # Usamos la ppf para calcular la puntuación correspondiente
 score = norm.ppf(percentile, loc=1350, scale=120)
 ```
-
+---
 ### 4
 **En un e-commerce, el gasto promedio de un cliente en un día es de $50, con una desviación estándar de $20. Supongamos que seleccionas una muestra aleatoria de 100 clientes.
 ¿Cuál es la probabilidad de que la media sea mayor a $52?**
