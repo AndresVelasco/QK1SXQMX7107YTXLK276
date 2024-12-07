@@ -357,7 +357,7 @@ $$
 P(\text{Visto}) = (0.4 \cdot 0.7) + (0.2 \cdot 0.3) = 0.28 + 0.06 = 0.34
 $$
 
-Ahora usamos el teorema de Bayes para calcular \(P(\text{Compra} \mid \text{Visto})\):
+Ahora usamos el teorema de Bayes para calcular $P(\text{Compra} \mid \text{Visto})$:
 
 $$
 P(\text{Compra} \mid \text{Visto}) = \frac{P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra})}{P(\text{Visto})}
@@ -474,6 +474,13 @@ prob = 1 - norm.cdf(1)
 
 `norm.cdf(1)` nos da la probabilidad de encontrar un valor **por debajo** de 1, por lo que la probabilidad contraria es el complementario.
 
+Alternativamente sin haber calculado previamente el valor estándarizado $z$:
+
+```python
+from scipy.stats import norm
+prob = 1 - norm.cdf(210, loc=200, scale=10) 
+```
+
 ### 2
 **Un grupo grande de personas se reúne y cada persona lanza una moneda 100 veces. ¿Qué porcentaje aproximado de personas obtendrá entre 40 y 60 cruces?"**
 **(Utiliza la regla empírica)**
@@ -513,9 +520,32 @@ Para calificar para un determinado trabajo, una candidata necesita estar en el 2
 **(Utiliza la regla empírica)**
 
 --- 
-Solución:
+Solución: **1590**
 
+Explicación:
 
+La regla empírica establece que:
+- El 68% de los datos están dentro de \(1\sigma\) de la media,
+- El 95% de los datos están dentro de \(2\sigma\) de la media,
+- El 99.7% de los datos están dentro de \(3\sigma\) de la media.
+
+Para el **2.5% superior**, corresponde a aproximadamente **2 desviaciones estándar por encima de la media** ($(Z \approx 2\$):
+
+$$
+1350 + 2 \cdot 120 = 1590
+$$
+
+Alternativamente, si no recordamos la regla podemos utilizar python. por ejemplo:
+
+```python
+from scipy.stats import norm
+
+# Percentil deseado (2.5% superior significa 97.5% acumulado)
+percentile = 0.975
+
+# Usamos la ppf para calcular la puntuación correspondiente
+score = norm.ppf(percentile, loc=1350, scale=120)
+```
 
 ### 4
 **En un e-commerce, el gasto promedio de un cliente en un día es de $50, con una desviación estándar de $20. Supongamos que seleccionas una muestra aleatoria de 100 clientes.
