@@ -266,14 +266,121 @@ $$
 1 - (\frac{1}{2})^{5}
 $$
 
+La probabilidad de obtener una cara es $\frac{1}{2}$. 
+
+Cada lanzamiento es un **evento independiente** por lo que las probabilidades se multiplican.
+
 ### 2
 **Cuando lanzas un par de dados, un doble es cuando ambos dados muestran el mismo número, por ejemplo, ambos muestran '1' o ambos muestran '4'. ¿Cuál es la probabilidad de obtener un doble al lanzar un par de dados?**
+
+---
+Solución: 
+
+La probabilidad de obtener un doble es **6/36** que es igual a **1/6** o aproximadamente **16.67%**.
+
+Esto es porque el número de sucesos posible es **6x6=36** (todas las combinaciones de 2 dados con 6 caras) y el número de casos favorables **6** (1-1, 2-2, 3-3, 4-4, 5-5, 6-6)
 
 ### 3
 **El juego de Monopoly se juega lanzando un par de dados. Si caes en la cárcel, para salir debes lanzar un doble en cualquiera de tus siguientes tres turnos, o pagar una multa. ¿Cuál es la probabilidad de salir de la cárcel sin pagar una multa?**
 
+---
+Solución: 
+
+$$
+1 - (\frac{5}{6})^3
+$$
+
+Para calcular la probabilidad de lanzar un doble en cualquiera de los siguientes tres turnos, parece más fácil calcular la probabilidad del evento contrario (complementario) que es no sacar ningun doble, para luego restarla a uno.
+
+$$
+P(\text{al menos un doble en 3 turnos}) = 1 - P(\text{ningun doble en 3 turnos})
+$$
+$$
+P(\text{ningun doble en 3 turnos}) = P(\text{no-doble}) \cdot P(\text{no-doble}) \cdot P(\text{no-doble})
+$$
+
+Del ejercicio anterior:
+
+$$
+P(\text{doble}) = \frac{1}{6}
+$$ 
+
+por lo que:
+
+$$
+P(\text{no-doble}) = 1 - P(\text{doble}) = 1 - \frac{1}{6} = \frac{5}{6}
+$$
+
 ### 4
 **En un e-commerce, se sabe que el 70% de los usuarios que visitan el sitio web realizan una compra. Además, el 40% de los usuarios que realizan una compra han visto un producto específico, mientras que solo el 20% de los usuarios que no realizan una compra han visto ese mismo producto. Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?**
+
+--- 
+Solución:
+
+Del enunciado conocemos:
+- $P(\text{Compra}) = 0.7$ (probabilidad de que un usuario realice una compra)
+- $P(\text{No Compra}) = 1 - P(\text{Compra}) = 0.3$ (probabilidad de que un usuario no realice una compra)
+- $P(\text{Visto} \mid \text{Compra}) = 0.4$ (probabilidad de que un usuario que realiza una compra haya visto el producto)
+- $P(\text{Visto} \mid \text{No Compra}) = 0.2$ (probabilidad de que un usuario que no realiza una compra haya visto el producto)
+
+La pregunta: *Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?*
+
+sería: 
+  
+En un e-commerce, se sabe que:  
+- El 70% de los usuarios que visitan el sitio web realizan una compra.  
+- El 40% de los usuarios que realizan una compra han visto un producto específico.  
+- El 20% de los usuarios que no realizan una compra han visto ese mismo producto.  
+
+Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?
+
+### Respuesta:  
+La probabilidad de que un usuario que ha visitado el producto específico realice una compra es **87.5%**.
+
+### Explicación:
+
+Este es un problema de probabilidad condicional, donde usamos el teorema de Bayes:
+
+$$
+P(\text{Compra} \mid \text{Visto}) = \frac{P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra})}{P(\text{Visto})}
+$$
+
+Donde:
+- \(P(\text{Compra}) = 0.7\) (probabilidad de que un usuario realice una compra),
+- \(P(\text{No Compra}) = 1 - P(\text{Compra}) = 0.3\) (probabilidad de que un usuario no realice una compra),
+- \(P(\text{Visto} \mid \text{Compra}) = 0.4\) (probabilidad de que un usuario que realiza una compra haya visto el producto),
+- \(P(\text{Visto} \mid \text{No Compra}) = 0.2\) (probabilidad de que un usuario que no realiza una compra haya visto el producto).
+
+Primero, calculamos \(P(\text{Visto})\), la probabilidad total de que un usuario haya visto el producto, usando la regla de la probabilidad total:
+
+$$
+P(\text{Visto}) = P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra}) + P(\text{Visto} \mid \text{No Compra}) \cdot P(\text{No Compra})
+$$
+
+Sustituyendo los valores:
+
+$$
+P(\text{Visto}) = (0.4 \cdot 0.7) + (0.2 \cdot 0.3) = 0.28 + 0.06 = 0.34
+$$
+
+Ahora usamos el teorema de Bayes para calcular \(P(\text{Compra} \mid \text{Visto})\):
+
+$$
+P(\text{Compra} \mid \text{Visto}) = \frac{P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra})}{P(\text{Visto})}
+$$
+
+Sustituyendo los valores:
+
+$$
+P(\text{Compra} \mid \text{Visto}) = \frac{0.4 \cdot 0.7}{0.34} = \frac{0.28}{0.34} \approx 0.8235
+$$
+
+Por lo tanto, la probabilidad de que un usuario que ha visto el producto específico realice una compra es:
+
+$$
+P(\text{Compra} \mid \text{Visto}) \approx 82.35\%
+$$
+
 
 ### 5
 **En un e-commerce, se sabe que el 30% de los usuarios que visitan el sitio web tienen una cuenta premium. Además, el 50% de los usuarios con cuenta premium realizan una compra, mientras que solo el 20% de los usuarios sin cuenta premium realizan una compra.Si un usuario realiza una compra, ¿cuál es la probabilidad de que tenga una cuenta premium?**
@@ -281,7 +388,7 @@ $$
 # Teorema del Limite Central
 
 ### 1
-**Se lanza una moneda justa 400 veces. ¿Cuáles son aproximadamente las probabilidades de obtener más de 210 caras?**
+**Se lanza una moneda 400 veces. ¿Cuáles son aproximadamente las probabilidades de obtener más de 210 caras?**
 **(Utiliza la regla empírica y la aproximación normal a la distribución binomial)**
 
 ### 2
