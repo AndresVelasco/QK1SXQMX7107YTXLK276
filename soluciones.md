@@ -1,12 +1,14 @@
 # Estadistica Descriptiva
 
 ### 1
-**Qué require en general de más recursos para su cálculo, la media o la mediana?**
+**¿Qué require en general de más recursos para su cálculo, la media o la mediana?**
 
+-----------
+Solución:
 
-- **Media**: Es más sencilla y rápida de calcular. Solo necesitas sumar todos los valores y dividir entre la cantidad de datos. El costo computacional es \( O(n) \), ya que recorres todos los datos una vez.
+- **Media**: Es más sencilla y rápida de calcular. Solo se necesita sumar todos los valores y dividir entre la cantidad de datos. 
 
-- **Mediana**: Requiere ordenar los datos primero, lo que tiene un costo computacional de al menos \( O(n \log n) \) con algoritmos eficientes. Una vez ordenados, seleccionas el valor central o el promedio de los dos valores centrales.
+- **Mediana**: Requiere ordenar los datos primero. Una vez ordenados, seleccionas el valor central o el promedio de los dos valores centrales.
 
 En general, **la mediana** requiere más recursos debido al proceso de ordenamiento, mientras que la **media** es más eficiente computacionalmente. Sin embargo, para datos ya ordenados, la mediana puede calcularse rápidamente.
 
@@ -19,16 +21,18 @@ b) El precio medio de los productos aumenta en un 5%
 
 c) El precio medio de los productos se mantiene igual
 
-#### Respuesta: **b) El precio medio de los productos aumenta en un 5%**
+-----------
+Solución:
 
-#### Explicación:
-El precio medio (\( \bar{x} \)) es el promedio de todos los precios. Si todos los precios aumentan en un 5%, esto significa que cada precio individual (\( x_i \)) se multiplica por 1.05. Por lo tanto, el nuevo precio medio será:
+**b) El precio medio de los productos aumenta en un 5%**
 
-\[
+El precio medio $\bar{x}$ es el promedio de todos los precios. Si todos los precios aumentan en un 5%, esto significa que cada precio individual $x_i$ se multiplica por 1.05. Por lo tanto, el nuevo precio medio será:
+
+$$
 \text{Nuevo precio medio} = \frac{\sum_{i=1}^n (x_i \cdot 1.05)}{n} = 1.05 \cdot \frac{\sum_{i=1}^n x_i}{n} = 1.05 \cdot \bar{x}
-\]
+$$
 
-Esto indica que el precio medio aumenta exactamente en un 5%. **No se necesita información adicional, ya que el aumento es proporcional para todos los productos.**
+Esto indica que el precio medio aumenta exactamente en un 5%.
 
 ### 3
 **Supongamos que todos los precios de los productos en un e-commerce aumentan en un 5%. ¿Cómo afecta esto a la mediana del precio?**
@@ -39,14 +43,12 @@ b) la mediana no varía
 
 c) no puede determinarse sin más datos, la mediana requiere de una ordenación exhaustiva de todos los precios
 
-#### Respuesta: **a) La mediana del precio de los productos aumenta en un 5%**
+-----------
+Solución:
 
-#### Explicación:
-La mediana es el valor central de un conjunto de datos ordenados. Si todos los precios aumentan en un 5%, entonces **cada precio se multiplica por 1.05**, lo que no altera el orden de los datos. Por lo tanto, el nuevo valor de la mediana será el 5% más del valor original:
+**a) La mediana del precio de los productos aumenta en un 5%**
 
-\[
-\text{Nueva mediana} = \text{Mediana original} \cdot 1.05
-\]
+La mediana es el valor central de un conjunto de datos **ordenados**. Si todos los precios aumentan en un 5%, entonces **cada precio se multiplica por 1.05**, lo que no altera el orden de los datos.
 
 Esto significa que la **mediana también aumenta exactamente en un 5%**, ya que el aumento afecta por igual a todos los valores del conjunto y no depende de cálculos adicionales o reordenamientos.  
 
@@ -59,16 +61,20 @@ b) la desviacion estándar aumenta un 5%
 
 c) no puede determinarse con los datos proporcionados, los valores extremos podrían influir severamente en la desviación estándar
 
-#### Respuesta: **b) La desviación estándar aumenta un 5%**
+-----------
+Solución:
 
-#### Explicación:
-La desviación estándar (\( \sigma \)) mide cuánto se dispersan los valores respecto a la media. Si todos los precios aumentan en un 5%, entonces cada valor se multiplica por 1.05. Esto escala tanto la media como las diferencias individuales respecto a la media por el mismo factor, lo que hace que la desviación estándar también se multiplique por 1.05:
+**b) La desviación estándar aumenta un 5%**
 
-\[
-\text{Nueva desviación estándar} = \sigma \cdot 1.05
-\]
+La desviación estándar ($\sigma$) mide cuánto se dispersan los valores respecto a la media. Si todos los precios aumentan en un 5%, entonces cada valor se multiplica por 1.05. Esto escala tanto la media como las diferencias individuales respecto a la media por el mismo factor, lo que hace que la desviación estándar también se multiplique por 1.05.
 
 El aumento proporcional en todos los valores mantiene la relación entre las diferencias intacta, pero incrementa su magnitud. Por lo tanto, la desviación estándar aumenta exactamente en un 5%.
+
+Recordad también de las propiedades de la Varianza (cuadrado de la desviación), que la varianza de una variable multiplicada por una constante (1.05 en este caso) es igual al cuadrado de dicha constante multiplicado por la varianza de la variable original:
+
+$$
+Var(1.05 \cdot X) = 1.05^{2} \cdot Var(X) \rightarrow \sigma = 1.05 \cdot \sigma_X
+$$
 
 ### 5
 **Supongamos que todos los precios de los productos en un e-commerce aumentan en un 5%. ¿Cómo afecta esto a la rango inter-cuartil de los precios?**
