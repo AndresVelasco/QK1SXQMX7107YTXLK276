@@ -6,11 +6,13 @@
 ---
 Solución:
 
+**En general, **la mediana** requiere más recursos debido al proceso de ordenamiento, mientras que la **media** es más eficiente computacionalmente**
+
 - **Media**: Es más sencilla y rápida de calcular. Solo se necesita sumar todos los valores y dividir entre la cantidad de datos. 
 
 - **Mediana**: Requiere ordenar los datos primero. Una vez ordenados, seleccionas el valor central o el promedio de los dos valores centrales.
 
-En general, **la mediana** requiere más recursos debido al proceso de ordenamiento, mientras que la **media** es más eficiente computacionalmente. Sin embargo, para datos ya ordenados, la mediana puede calcularse rápidamente.
+En el **caso particular** de que los datos estuviesen ya ordenados, la mediana puede calcularse rápidamente.
 
 ### 2
 **Supongamos que todos los precios de los productos en un e-commerce aumentan en un 5%. ¿Cómo afecta esto al precio medio de los productos?**
@@ -260,7 +262,7 @@ Como la desviación no es más que la raíz cuadrada de la varianza, la nueva de
 --- 
 Solución: 
 
-Lo más sencillo es calcular esto como la probabilidad de NO obtener 5 caras:
+**Lo más sencillo es calcular esto como la probabilidad de NO obtener 5 caras:**
 
 $$
 1 - (\frac{1}{2})^{5}
@@ -276,7 +278,7 @@ Cada lanzamiento es un **evento independiente** por lo que las probabilidades se
 ---
 Solución: 
 
-La probabilidad de obtener un doble es **6/36** que es igual a **1/6** o aproximadamente **16.67%**.
+**La probabilidad de obtener un doble es **6/36** que es igual a **1/6** o aproximadamente **16.67%****
 
 Esto es porque el número de sucesos posible es **6x6=36** (todas las combinaciones de 2 dados con 6 caras) y el número de casos favorables **6** (1-1, 2-2, 3-3, 4-4, 5-5, 6-6)
 
@@ -317,10 +319,10 @@ $$
 --- 
 Solución:
 
-La probabilidad de que un usuario que ha visto el producto específico realice una compra es:
+**La probabilidad de que un usuario que ha visto el producto específico realice una compra es**
 
 $$
-P(\text{Compra} \mid \text{Visto}) \approx 0.82 (82%)
+P(\text{Compra} \mid \text{Visto}) \approx 0.82 (82\%)
 $$
 
 Explicación:
@@ -379,7 +381,7 @@ $$
 --- 
 Solución:
 
-La probabilidad de que un usuario que realiza una compra tenga una cuenta premium es:
+**La probabilidad de que un usuario que realiza una compra tenga una cuenta premium es:**
 
 $$
 P(\text{Premium} \mid \text{Compra}) \approx = 0.43 (43.48\%)
@@ -404,18 +406,17 @@ $$
 P(\text{Premium} \mid \text{Compra}) = \frac{P(\text{Compra} \mid \text{Premium}) \cdot P(\text{Premium})}{P(\text{Compra})}
 $$
 
-Primero, calculamos \(P(\text{Compra})\) usando la **regla de la probabilidad total**:
+Primero, calculamos $P(\text{Compra})$ usando la **regla de la probabilidad total**:
 
 $$
 P(\text{Compra}) = P(\text{Compra} \mid \text{Premium}) \cdot P(\text{Premium}) + P(\text{Compra} \mid \text{No Premium}) \cdot P(\text{No Premium})
 $$
 
-Sabemos que \(P(\text{No Premium}) = 1 - P(\text{Premium}) = 0.7\). Sustituyendo los valores:
+Sabemos que $P(\text{No Premium}) = 1 - P(\text{Premium}) = 0.7$. Sustituyendo los valores:
 
 $$
 P(\text{Compra}) = (0.5 \cdot 0.3) + (0.2 \cdot 0.7) = 0.15 + 0.14 = 0.29
 $$
-
 
 Ahora usamos el **teorema de Bayes** para calcular \(P(\text{Premium} \mid \text{Compra})\):
 
@@ -435,14 +436,86 @@ $$
 **Se lanza una moneda 400 veces. ¿Cuáles son aproximadamente las probabilidades de obtener más de 210 caras?**
 **(Utiliza la regla empírica y la aproximación normal a la distribución binomial)**
 
+---
+Solución:
+
+**La probabilidad aproximada se obtener más de $210$ caras es: $16\%$**
+
+Explicación:
+
+La probabilidad $p$ de obtener cara en un lanzamiento es $\frac{1}{2} = 0.5$
+
+En media, si repitiesemos los 400 lanzamientos varias veces, se obtendrían $400 \cdot 0.5 = 200$ caras.
+
+Hay que tener en cuenta la teoría de la distribución binomial según la cual este tipo de experimento (en este caso lanzar una moneda 400 veces), si es repetido muchas veces el número de éxitos
+se distribuye según una curva normal, con desviación estándar:
+
+$$
+\sigma = \sqrt{n \cdot p \cdot (1-p)} = \sqrt{400 \cdot 0.5 \cdot 0.5} = \sqrt{100} = 10
+$$
+
+Dado que la pregunta es: *la probabilidad de obtener más de 210 caras* se puede leer como *la probabilidad de obtener un número de éxitos mayor a la media más una desviación estándar*
+
+En una distribución normal, aproximadamente (regla empírica) **el 34% de los datos están entre la media y la media más una desviación estándar, y la mitad por supuesto quedan más arriba de la media**.
+
+Por lo que más allá de 210 (una desviación estándar de la media) son:
+
+$$
+50 - 34 = 16%
+$$
+
+Si no nos acordasemos de la regla empírica, podemos resolverlo teniendo en cuenta que el valor estándarizado de 210 es 1 (media más **1** desviación estándar) podemos utilizar la función acumulativa de densidad de probabilidad de la función normal
+que nos da la probabilidad de encontrar un valor igual o menor que el valor estandarizado dado.
+
+```python
+from scipy.stats import norm
+prob = 1 - norm.cdf(1) 
+```
+
+`norm.cdf(1)` nos da la probabilidad de encontrar un valor **por debajo** de 1, por lo que la probabilidad contraria es el complementario.
+
 ### 2
-**"Un grupo grande de personas se reúne y cada persona lanza una moneda 100 veces. ¿Qué porcentaje aproximado de personas obtendrá entre 40 y 60 cruces?"**
+**Un grupo grande de personas se reúne y cada persona lanza una moneda 100 veces. ¿Qué porcentaje aproximado de personas obtendrá entre 40 y 60 cruces?"**
 **(Utiliza la regla empírica)**
+
+Solución:
+
+**La probabilidad aproximada se obtener más entre $40$ y $60$ caras es: $95.5\%$**
+
+Explicación:
+
+De manera análoga al ejercicio anterior, la desviación estándar del número de éxitos (cruces en este caso) al repetirse el experimento (cada uno de los 100 lanzamientos) es:
+
+$$
+\sigma = \sqrt{n \cdot p \cdot (1-p)} = \sqrt{100 \cdot 0.5 \cdot 0.5} = \sqrt{100} = 5
+$$
+
+Y la media por supuesto 50 (cruces).
+
+40 y 60 consituyen por tanto **2 desviaciones estándar de la media en ambos sentidos**, lo que aproximadamente según la regla empírica abarca el 95.5% de las posibilidades.
+
+Si no recordasemos esta regla, podemos utilizar la función acumulativa de densidad de probabilidad de la función normal de la siguiente manera:
+
+```python
+from scipy.stats import norm
+prob = norm.cdf(2) - norm.cdf(-2) 
+```
+
+`norm.cdf(2)` nos da la probabilida de encontrar un valor por debajo de 2
+
+`norm.cdf(-2)` nos da la probabilida de encontrar un valor por debajo de -2
+
+La resta de ambos es la probabilidad de encontrarlo entre medias.
 
 ### 3
 **Las puntuaciones de un determinado examen siguen una distribución normal con una media de 1350 y una desviación estándar de 120.
 Para calificar para un determinado trabajo, una candidata necesita estar en el 2.5% superior. ¿Qué puntuación aproximada necesita?**
 **(Utiliza la regla empírica)**
+
+--- 
+Solución:
+
+
 
 ### 4
 **En un e-commerce, el gasto promedio de un cliente en un día es de $50, con una desviación estándar de $20. Supongamos que seleccionas una muestra aleatoria de 100 clientes.
