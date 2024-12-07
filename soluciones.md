@@ -333,10 +333,9 @@ Del enunciado conocemos:
 
 **IMPORTANTE: la frase "el 40% de los usuarios que realizan una compra han visto un producto específico" puede resultar ambigua. Pero notad que se enfoca en los usuarios que realizan una compra como el grupo base (condicional).  Luego indica que dentro de ese grupo, el 40% corresponde a los que han visto el producto específico. Esto implica la probabilidad condicional $P(\text{Visto} \mid \text{Compra})**
 
-La pregunta: *Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?* se corresponde con:
+La pregunta: *Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?* debe interpretarse como:
 
 $P(\text{Compra} \mid \text{Visto})$
-
 
 Este es un problema de probabilidad condicional, donde usamos el teorema de Bayes:
 
@@ -374,9 +373,61 @@ $$
 P(\text{Compra} \mid \text{Visto}) \approx 82.35\%
 $$
 
-
 ### 5
 **En un e-commerce, se sabe que el 30% de los usuarios que visitan el sitio web tienen una cuenta premium. Además, el 50% de los usuarios con cuenta premium realizan una compra, mientras que solo el 20% de los usuarios sin cuenta premium realizan una compra.Si un usuario realiza una compra, ¿cuál es la probabilidad de que tenga una cuenta premium?**
+
+--- 
+Solución:
+
+La probabilidad de que un usuario que realiza una compra tenga una cuenta premium es:
+
+$$
+P(\text{Premium} \mid \text{Compra}) \approx = 0.43 (43.48\%)
+$$
+
+Explicación:
+
+Del enunciado conocemos:
+- $P(\text{Premium}) = 0.7$ (probabilidad de que un usuario tenga una cuenta premium)
+- $P(\text{Compra} \mid \text{Premium}) = 0.4$ (probabilidad de que un usuario con cuenta premium realize una compra)
+- $P(\text{Compra} \mid \text{No Premium}) = 0.2$ (probabilidad de que un usuario sin cuenta premium realize una compra)
+
+La pregunta: *Si un usuario realiza una compra, ¿cuál es la probabilidad de que tenga una cuenta premium* debe interpretarse como:
+
+$$
+P(\text{Premium} \mid \text{Compra})
+$$
+
+Este es un problema de probabilidad condicional, y utilizaremos el **teorema de Bayes**:
+
+$$
+P(\text{Premium} \mid \text{Compra}) = \frac{P(\text{Compra} \mid \text{Premium}) \cdot P(\text{Premium})}{P(\text{Compra})}
+$$
+
+Primero, calculamos \(P(\text{Compra})\) usando la **regla de la probabilidad total**:
+
+$$
+P(\text{Compra}) = P(\text{Compra} \mid \text{Premium}) \cdot P(\text{Premium}) + P(\text{Compra} \mid \text{No Premium}) \cdot P(\text{No Premium})
+$$
+
+Sabemos que \(P(\text{No Premium}) = 1 - P(\text{Premium}) = 0.7\). Sustituyendo los valores:
+
+$$
+P(\text{Compra}) = (0.5 \cdot 0.3) + (0.2 \cdot 0.7) = 0.15 + 0.14 = 0.29
+$$
+
+
+Ahora usamos el **teorema de Bayes** para calcular \(P(\text{Premium} \mid \text{Compra})\):
+
+$$
+P(\text{Premium} \mid \text{Compra}) = \frac{P(\text{Compra} \mid \text{Premium}) \cdot P(\text{Premium})}{P(\text{Compra})}
+$$
+
+Sustituyendo los valores:
+
+$$
+P(\text{Premium} \mid \text{Compra}) = \frac{0.5 \cdot 0.3}{0.29} = \frac{0.15}{0.29} \approx 0.4348
+$$
 
 # Teorema del Limite Central
 
