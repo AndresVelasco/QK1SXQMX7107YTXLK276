@@ -257,6 +257,15 @@ Como la desviación no es más que la raíz cuadrada de la varianza, la nueva de
 ### 1
 **Una moneda se tira al aire 5 veces. ¿Cual es la probabilidad de obtener como máximo 4 caras?**
 
+--- 
+Solución: 
+
+Lo más sencillo es calcular esto como la probabilidad de NO obtener 5 caras:
+
+$$
+1 - (\frac{1}{2})^{5}
+$$
+
 ### 2
 **Cuando lanzas un par de dados, un doble es cuando ambos dados muestran el mismo número, por ejemplo, ambos muestran '1' o ambos muestran '4'. ¿Cuál es la probabilidad de obtener un doble al lanzar un par de dados?**
 
