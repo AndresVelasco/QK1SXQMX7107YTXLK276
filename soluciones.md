@@ -586,13 +586,55 @@ score = norm.ppf(percentile, loc=1350, scale=120)
 **En un e-commerce, el gasto promedio de un cliente en un día es de $50, con una desviación estándar de $20. Supongamos que seleccionas una muestra aleatoria de 100 clientes.
 ¿Cuál es la probabilidad de que la media sea mayor a $52?**
 
+---
+
+
+---
+
 ### 5
 **En un e-commerce, el tiempo promedio que los clientes pasan navegando en el sitio web es de 8 minutos con una desviación estándar de 2 minutos. Supongamos que seleccionamos una muestra aleatoria de 50 clientes.**
 **Utiliza python para calcular la probabilidad de que la media medida sobre la muestra sea mayor a 10 minutos**
 
+---
+Solución:
+
+```python
+from scipy.stats import norm
+
+# Parámetros de la distribución
+mu = 8  # Media poblacional
+sigma = 2 / (50**0.5)  # Desviación estándar de la media muestral
+
+# Probabilidad de que la media muestral sea mayor a 10 minutos
+threshold = 10
+probability = 1 - norm.cdf(threshold, loc=mu, scale=sigma)
+
+print(f"La probabilidad de que la media muestral sea mayor a {threshold} minutos es {probability:.6f}")
+```
+---
+
 ### 6
 **En un e-commerce, el tiempo promedio que los clientes pasan navegando en el sitio web es de 8 minutos con una desviación estándar de 2 minutos. Supongamos que seleccionamos una muestra aleatoria de 50 clientes.**
 **Utilizando Python, calcula el intervalo simétrico que contiene el 95% de las medias muestrales (usa la función PPF para encontrar los percentiles correspondientes)**
+
+---
+Solución:
+
+```python
+from scipy.stats import norm
+
+# Parámetros de la distribución
+mu = 8
+sigma = 2 / (50**0.5)  # Desviación estándar de la media muestral
+
+# Percentiles para el intervalo del 95%
+lower_bound = norm.ppf(0.025, loc=mu, scale=sigma)
+upper_bound = norm.ppf(0.975, loc=mu, scale=sigma)
+
+print(f"El intervalo del 95% es ({lower_bound:.3f}, {upper_bound:.3f})")
+```
+
+---
 
 ### 8
 **Un e-commerce quiere estimar el gasto promedio de sus clientes por transacción. A partir de una muestra de 100 transacciones, se calcula:**
