@@ -875,4 +875,7 @@ Solución:
 ---
 Solución:
 
+Detalle en: [chisquared_1](exercise_chisquared_1.ipynb)
+
 ---
+
