@@ -876,15 +876,15 @@ Solución:
 
 **Existe una relación estadisticamente significativa entre el canal de adquisición y la categoría de producto comprada?**
 
----
-Solución:
-
 Tips:
 
 - identifica previamente el tipo de test chi-squared que debe aplicar (hay 2 variables)
 - puedes optar por calcular el valor de chi-cuadrado "a mano" y calcular el p-value a partir de ello o utilizar la función [scipy.stats.chi2_contingency](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html)
+  
+---
+Solución:
 
-[chi-squared](exercise-chisquared_independence.ipynb)
+[chi-squared](exercise_chisquared-independence.ipynb)
 
 ---
 
