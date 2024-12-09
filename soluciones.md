@@ -667,6 +667,12 @@ lower_bound = norm.ppf(0.025, loc=mu, scale=sigma)
 upper_bound = norm.ppf(0.975, loc=mu, scale=sigma)
 
 print(f"El intervalo del 95% es ({lower_bound:.3f}, {upper_bound:.3f})")
+
+# alternativamente
+z=norm.ppf(1-(1-0.95)/2)
+lower_bound = mu - z*sigma
+upper_bound = mu + z*sigma
+print(f"El intervalo del 95% es ({lower_bound:.3f}, {upper_bound:.3f})")
 ```
 
 ---
