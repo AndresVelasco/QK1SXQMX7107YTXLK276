@@ -771,13 +771,13 @@ Solución:
 
 **El nuevo nivel de confianza, reduciendo la amplitud del rango en un 20% con tamaño de muestra 100 es del 81.18%**
 
-A esto se llega disminuyendo el valor de $z$ en 2:
+Fijado el tamaño de la muestra, para disminuir el rango en un 20% tenemos que disminuir el valor de $z$ en dicha cantidad:
 
 $$
 IC = \bar{x} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}
 $$
 
-Y calculando la probabilidad de que la media quede entre $-z$ y $z$ como:
+Para después calcular la probabilidad de que la media quede entre $-z$ y $z$ como:
 
 $cdf(z) - ( 1 - cdf(z) ) = 2*cdf(z) - 1$
 
