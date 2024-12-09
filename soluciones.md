@@ -837,7 +837,7 @@ Tip: aplicar un z-test de dos muestras (A/B Test)
 
 --- 
 Solución:
-**El test es significativo (el proceso de checkout aumenta el uso de cupones descuento porque el p-value resultante es apenas 0.1% (muy por debajo del 5% que normalmente se considera)**
+**El test es significativo (el proceso de checkout aumenta el uso de cupones descuento porque el p-value resultante es apenas 0.1% (muy por debajo del 5% que normalmente se considera) (z-value: 3.09)**
 
 Desarrollo:
 [ab test](exercise-ab_test.ipynb)
@@ -857,7 +857,7 @@ Tip: aplicar un z-test para dos muestras pareadas (paired z-test). Obviar cualqu
 
 --- 
 Solución:
-**El test es significativo (el nuevo dise.o incremental el tiempo en página, el p-value resultante es ínfimo (muy por debajo del 5% que normalmente se considera)**
+**El test es significativo (el nuevo dise.o incremental el tiempo en página, el p-value resultante es ínfimo (muy por debajo del 5% que normalmente se considera) (z-value: 5.32)**
 
 [paired test](exercise-paired_test.ipynb)
 
@@ -886,6 +886,8 @@ Tips:
   
 ---
 Solución:
+
+**Sí existe una relación estadísticamente significativa porque el valor de chi-cuadrado resultante de los datos es 28, muy por encima del valor crítico correspondiente a un p-value 0.05 (z-crítico: 9.49)**
 
 [chi-squared](exercise_chisquared-independence.ipynb)
 
