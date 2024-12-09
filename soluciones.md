@@ -561,11 +561,11 @@ Solución: **1590**
 Explicación:
 
 La regla empírica establece que:
-- El 68% de los datos están dentro de $1\sigma$ de la media,
-- El 95% de los datos están dentro de $2\sigma$ de la media,
-- El 99.7% de los datos están dentro de $3\sigma$ de la media.
+- El 68% de los datos están dentro de $\pm 1\sigma$ de la media,
+- El 95% de los datos están dentro de $\pm 2\sigma$ de la media,
+- El 99.7% de los datos están dentro de $\pm 3\sigma$ de la media.
 
-Para el **2.5% superior**, corresponde a aproximadamente **2 desviaciones estándar por encima de la media** ((Z \approx 2\$):
+Para el **2.5% superior**, corresponde a aproximadamente **2 desviaciones estándar por encima de la media** ($Z \approx 2$):
 
 $$
 1350 + 2 \cdot 120 = 1590
@@ -594,7 +594,7 @@ Solución:
 
 **La probabilidad de que la media muestral sea mayor a 52 es aproximadamente 16\%**
 
-Podemos usar `scipy.stats.norm.cdf` para calcular la probabilidad acumulada complementaria ($P(Z > z)$) donde $z$ es el valor estandarizado correspondiente a $z$:
+Podemos usar `scipy.stats.norm.cdf` para calcular la probabilidad acumulada complementaria $P(Z > z)$ donde $z$ es el valor estandarizado correspondiente a $z$:
 
 ```python
 from scipy.stats import norm
