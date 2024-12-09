@@ -837,6 +837,7 @@ Tip: aplicar un z-test de dos muestras (A/B Test)
 
 --- 
 Solución:
+**El test es significativo (el proceso de checkout aumenta el uso de cupones descuento porque el p-value resultante es apenas 0.1% (muy por debajo del 5% que normalmente se considera)**
 
 [ab test](exercise-ab_test.ipynb)
 
