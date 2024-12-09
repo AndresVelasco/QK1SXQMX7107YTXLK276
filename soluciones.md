@@ -859,6 +859,7 @@ Tip: aplicar un z-test para dos muestras pareadas (paired z-test). Obviar cualqu
 Solución:
 **El test es significativo (el nuevo dise.o incremental el tiempo en página, el p-value resultante es ínfimo (muy por debajo del 5% que normalmente se considera) (z-value: 5.32)**
 
+Desarrollo:
 [paired test](exercise-paired_test.ipynb)
 
 ---
@@ -889,6 +890,7 @@ Solución:
 
 **Sí existe una relación estadísticamente significativa porque el valor de chi-cuadrado resultante de los datos es 28, muy por encima del valor crítico correspondiente a un p-value 0.05 (z-crítico: 9.49)**
 
+Desarrollo:
 [chi-squared](exercise_chisquared-independence.ipynb)
 
 ---
