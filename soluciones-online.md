@@ -338,71 +338,8 @@ $$
 
 ---
 
+
 ### 4
-**En un e-commerce, se sabe que el 70% de los usuarios que visitan el sitio web realizan una compra. Además, el 40% de los usuarios que realizan una compra han visto un producto específico, mientras que solo el 20% de los usuarios que no realizan una compra han visto ese mismo producto. Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?**
-
---- 
-Solución:
-
-**La probabilidad de que un usuario que ha visto el producto específico realice una compra es**
-
-$$
-P(\text{Compra} \mid \text{Visto}) \approx 0.82 (82\\%)
-$$
-
-Explicación:
-
-Del enunciado conocemos:
-- $P(\text{Compra}) = 0.7$ (probabilidad de que un usuario realice una compra)
-- $P(\text{No Compra}) = 1 - P(\text{Compra}) = 0.3$ (probabilidad de que un usuario no realice una compra)
-- $P(\text{Visto} \mid \text{Compra}) = 0.4$ (probabilidad de que un usuario que realiza una compra haya visto el producto)
-- $P(\text{Visto} \mid \text{No Compra}) = 0.2$ (probabilidad de que un usuario que no realiza una compra haya visto el producto)
-
-**IMPORTANTE: la frase "el 40% de los usuarios que realizan una compra han visto un producto específico" puede resultar ambigua. Pero notad que se enfoca en los usuarios que realizan una compra como el grupo base (condicional).  Luego indica que dentro de ese grupo, el 40% corresponde a los que han visto el producto específico. Esto implica la probabilidad condicional $P(\text{Visto} \mid \text{Compra})$**
-
-La pregunta: *Si un usuario ha visitado el producto específico, ¿cuál es la probabilidad de que realice una compra?* debe interpretarse como:
-
-$P(\text{Compra} \mid \text{Visto})$
-
-Este es un problema de probabilidad condicional, donde usamos el teorema de Bayes:
-
-$$
-P(\text{Compra} \mid \text{Visto}) = \frac{P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra})}{P(\text{Visto})}
-$$
-
-Primero, calculamos \(P(\text{Visto})\), la probabilidad total de que un usuario haya visto el producto, usando la regla de la probabilidad total:
-
-$$
-P(\text{Visto}) = P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra}) + P(\text{Visto} \mid \text{No Compra}) \cdot P(\text{No Compra})
-$$
-
-Sustituyendo los valores:
-
-$$
-P(\text{Visto}) = (0.4 \cdot 0.7) + (0.2 \cdot 0.3) = 0.28 + 0.06 = 0.34
-$$
-
-Ahora usamos el teorema de Bayes para calcular $P(\text{Compra} \mid \text{Visto})$:
-
-$$
-P(\text{Compra} \mid \text{Visto}) = \frac{P(\text{Visto} \mid \text{Compra}) \cdot P(\text{Compra})}{P(\text{Visto})}
-$$
-
-Sustituyendo los valores:
-
-$$
-P(\text{Compra} \mid \text{Visto}) = \frac{0.4 \cdot 0.7}{0.34} = \frac{0.28}{0.34} \approx 0.8235
-$$
-
-Por lo tanto, la probabilidad de que un usuario que ha visto el producto específico realice una compra es:
-
-$$
-P(\text{Compra} \mid \text{Visto}) \approx 82.35\\%
-$$
-
----
-
-### 5
 **En un e-commerce, se sabe que el 30% de los usuarios que visitan el sitio web tienen una cuenta premium. Además, el 50% de los usuarios con cuenta premium realizan una compra, mientras que solo el 20% de los usuarios sin cuenta premium realizan una compra.Si un usuario realiza una compra, ¿cuál es la probabilidad de que tenga una cuenta premium?**
 
 --- 
@@ -413,6 +350,8 @@ Solución:
 $$
 P(\text{Premium} \mid \text{Compra}) \approx = 0.43 (43.48\\%)
 $$
+
+**IMPORTANTE: la frase clave "el 50% de los usuarios con cuenta premium realizan una compra" puede resultar ambigua. Pero notad que se enfoca en los usuarios que tienen cuenta premium como el grupo base (condicional).  Luego indica que dentro de ese grupo, el 50% corresponde a los que han realizado una compra. Esto implica la probabilidad condicional $P(\text{Compra} \mid \text{Premium})$**
 
 Explicación:
 
